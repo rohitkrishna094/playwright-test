@@ -1,0 +1,15 @@
+{
+    "name": "playwright-test",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "envInfo": "npx envinfo --preset playwright --markdown"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@playwright/test": "^1.30.0"
+    }
+}
