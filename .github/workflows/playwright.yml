@@ -50,6 +50,9 @@ jobs:
       - name: dry run deps
         run: npx playwright install-deps --dry-run
 
+      - name: Print if cache miss
+        run: echo "hello world"
+
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
