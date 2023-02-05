@@ -8,7 +8,7 @@ test('has title', async({ page }) => {
     await expect(page).toHaveTitle(/Playwright/);
 
     // @ts-ignore
-    await expect(res.status()).toBe(201);
+    await expect(res.status()).toBe(200);
 });
 
 test('get started link', async({ page }) => {
@@ -21,4 +21,25 @@ test('get started link', async({ page }) => {
     await expect(page).toHaveURL(/.*intro/);
 });
 
-const links = ['https://playwright.dev/'];
+const links = [
+    'https://playwright.dev/',
+    'https://httpstatus.io/',
+    'https://stackoverflow.com/',
+    'https://developer.mozilla.org/',
+    'https://www.lambdatest.com/',
+    'https://www.zdnet.com/',
+    'https://developers.google.com/',
+    'https://tools.pingdom.com/',
+    'https://medium.com/',
+    'https://gtmetrix.com/',
+];
+
+links.forEach(link => {
+    test(`visiting ${link}`, async({ page }) => {
+        const res = await page.goto(link);
+
+        // @ts-ignore
+        await expect(res.status()).toBe(200);
+    });
+
+});
