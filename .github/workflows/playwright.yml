@@ -51,7 +51,7 @@ jobs:
         run: npx playwright install-deps --dry-run
 
       - name: Print if cache miss
-        run: echo "hello world"
+        run: echo ${{steps.cache-apt-packages.outputs.cache-hit}}
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
